@@ -1,0 +1,22 @@
+<section class="galeria">
+  <h2 class="titulo">GALERIA</h2>
+  <div class="contenedor-tarjetas">
+  <div class="tarjeta" *ngFor="let destino of destinos" (click)="abrirModal(destino)">
+    <img [src]="destino.imagen" alt="{{ destino.titulo }}">
+    <h3>{{ destino.titulo }}</h3>
+    <p>{{ destino.descripcion }}</p>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-fondo" *ngIf="modalVisible" (click)="cerrarModal()">
+  <div class="modal-contenido" (click)="$event.stopPropagation()">
+    <img [src]="destinoSeleccionado?.imagen" alt="Imagen ampliada">
+    <h2>{{ destinoSeleccionado?.titulo }}</h2>
+    <p>{{ destinoSeleccionado?.descripcion }}</p>
+  </div>
+</div>
+
+</section>
+
+

@@ -1,0 +1,31 @@
+.btn-login {
+  background-color: #07cce6;
+  border-radius: 1px;
+  font-weight:600;
+  height: 70px;
+}
+/*.btn-login {
+  background-color: #07cce6;
+  border-radius: 1px;
+  font-weight: 600;
+  height: 35px;  /*Igual altura que la navbar
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}*/
+.navbar-brand img {
+  height: 30px;
+}
+.logo-amc {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 6px;
+  margin-left: 21px;
+  background: linear-gradient(90deg, #025fb7 0%, #2fd2e8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

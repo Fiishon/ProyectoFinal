@@ -1,0 +1,77 @@
+.custom-modal-width {
+  max-width: 1000px; /* Cambia el valor según lo que necesites */
+}
+.modal-left-panel {
+  flex-basis: 50%;   /* Ajusta el porcentaje según lo que necesites */
+  max-width: 500px;  /* Opcional: limita el ancho máximo */
+  padding-right: 24px;
+}
+
+.modal-right-panel {
+  flex-basis: 50%;   /* Ajusta el porcentaje según lo que necesites */
+  max-width: 500px;  /* Opcional: limita el ancho máximo */
+  padding-left: 24px;
+}
+
+.login-section-title.text-end {
+  text-align: right !important; /* Override center alignment if needed, for "Regístrate desde" */
+  color: #8c0053; /* ADO's primary color */
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+/* Checkbox container styling */
+.ad-checkbox-container {
+  display: flex;
+  align-items: flex-start; /* Align checkbox with the start of the text */
+  margin-bottom: 10px;
+}
+
+.ad-checkbox {
+  width: 1.25em; /* Standard checkbox size */
+  height: 1.25em;
+  margin-top: 0.25em; /* Align vertically with text */
+  border-radius: 0.25rem; /* Slightly rounded corners */
+  border: 1px solid #ccc;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent checkbox from shrinking */
+}
+
+.ad-checkbox:checked {
+  background-color: #8c0053; /* ADO's primary color when checked */
+  border-color: #8c0053;
+}
+
+.ad-checkbox-label {
+  font-size: 0.85rem;
+  color: #555;
+  margin-left: 0.5rem; /* Space between checkbox and text */
+  line-height: 1.4; /* Better readability for multi-line text */
+}
+
+.ad-link-text {
+  color: #8c0053; /* ADO's primary color for links in text */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.ad-link-text:hover {
+  text-decoration: underline;
+}
+
+/* Button style for registration (different color) */
+.ad-btn-secondary {
+  background-color: #5ec0b4; /* Light green/teal from ADO example */
+  border-color: #5ec0b4;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+}
+
+.ad-btn-secondary:hover {
+  background-color: #48a69a; /* Darker shade on hover */
+  border-color: #48a69a;
+}

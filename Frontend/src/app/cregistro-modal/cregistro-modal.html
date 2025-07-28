@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css">
+<div class="modal fade" id="registroModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg custom-modal-width">
+    <div class="modal-content p-4 rounded-4">
+      <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div class="modal-body custom-modal-body d-flex flex-row">
+        <!-- Panel izquierdo -->
+        <div class="modal-left-panel">
+          <div class="text-center mb-4">
+            <img src="/logo.png" alt="AMC Logo" class="img-fluid ad-logo mb-3">
+            <h2 class="modal-welcome-title">¡Te damos la bienvenida!</h2>
+            <p class="modal-welcome-text">Crea una nueva cuenta y comienza a disfrutar de más funcionalidades y beneficios al viajar en nuestro sitio.</p>
+          </div>
+          <ul class="list-unstyled modal-features-list">
+            <li><i class="bi bi-person-circle feature-icon"></i> Crea <strong>tu propio perfil</strong></li>
+            <li><i class="bi bi-bookmark-fill feature-icon"></i> Guarda <strong>viajes frecuentes</strong></li>
+            <li><i class="bi bi-clock-history feature-icon"></i> Consulta <strong>historial de viaje</strong></li>
+            <li><i class="bi bi-people-fill feature-icon"></i> Administra <strong>pasajeros favoritos</strong></li>
+            <li><i class="bi bi-tag-fill feature-icon"></i> Recibe <strong>ofertas y promociones</strong></li>
+            <li><i class="bi bi-shield-fill-check feature-icon"></i> Confía, <strong>tu información está segura</strong></li>
+          </ul>
+        </div>
+
+        <!-- Panel derecho -->
+        <div class="modal-right-panel">
+          <h5 class="modal-title login-section-title">Crea tu cuenta</h5>
+          <form>
+            <div class="mb-4">
+              <label class="form-label ad-label">Nombre(s)*</label>
+              <input type="text" class="form-control ad-input" placeholder="Escribe tu nombre" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label ad-label">Apellido(s)*</label>
+              <input type="text" class="form-control ad-input" placeholder="Escribe tu apellido" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label ad-label">Correo electrónico*</label>
+              <input type="email" class="form-control ad-input" placeholder="ejemplo@correo.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label ad-label">Contraseña*</label>
+              <div class="input-group">
+                <input [type]="showPassword ? 'text' : 'password'"
+                      class="form-control ad-input"
+                      placeholder="Escribe la contraseña"
+                      [(ngModel)]="password"
+                      name="password"
+                      required>
+
+                <button class="btn btn-outline-secondary ad-password-toggle"
+                        type="button"
+                        (click)="togglePasswordVisibility()">
+                  <i [ngClass]="showPassword ? 'fi fi-rs-crossed-eye' : 'fi fi-rs-eye'"></i>
+                </button>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label ad-label">Confirma la contraseña*</label>
+              <div class="input-group">
+                <input [type]="showConfirmPassword ? 'text' : 'password'"
+                      class="form-control ad-input"
+                      placeholder="Confirma la contraseña"
+                      [(ngModel)]="confirmPassword"
+                      name="confirmPassword"
+                      required>
+
+                <button class="btn btn-outline-secondary ad-password-toggle"
+                        type="button"
+                        (click)="toggleConfirmPasswordVisibility()">
+                  <i [ngClass]="showConfirmPassword ? 'fi fi-rs-crossed-eye' : 'fi fi-rs-eye'"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-check ad-checkbox-container mt-4 mb-3">
+              <input class="form-check-input ad-checkbox" type="checkbox" id="promoCheckbox">
+              <label class="form-check-label ad-checkbox-label" for="promoCheckbox">
+                Deseo recibir promociones exclusivas para viajar.
+              </label>
+            </div>
+
+            <div class="form-check ad-checkbox-container mb-4">
+              <input class="form-check-input ad-checkbox" type="checkbox" id="termsCheckbox" required>
+              <label class="form-check-label ad-checkbox-label" for="termsCheckbox">
+                De acuerdo con <a href="#" class="ad-link-text">Términos y Condiciones</a> y el <a href="#" class="ad-link-text">Aviso de Privacidad</a>.
+              </label>
+            </div>
+
+            <button type="submit" class="btn ad-btn-secondary w-100">REGISTRAR</button>
+          </form>
+
+          <p class="mt-3 text-center register-text">
+            ¿Ya tienes una cuenta?
+            <a href="#" class="ad-register-link" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Ingresa aquí</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<!-- Imagen Fija -->
+<div class="imagen-promocion">
+  <img src="/promociones.png" alt="Promociones" class="d-block w-100">
+  <div class="imagen-caption text-center text-white">
+    <h3>Promociones</h3>
+    <p>No te pierdas nuestras increíbles ofertas</p>
+  </div>
+</div>
+
+<!-- Sección de Promociones -->
+<section class="galeria my-5">
+  <h2 class="text-center">Promociones</h2>
+  <div class="contenedor-tarjetas d-flex flex-wrap justify-content-center gap-4 mt-4">
+    <div class="tarjeta card" *ngFor="let promo of promos" (click)="abrirModal(promo)" style="width: 18rem; cursor: pointer;">
+      <img [src]="promo.imagen" class="card-img-top" alt="{{ promo.titulo }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ promo.titulo }}</h5>
+        <p class="card-text">{{ promo.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal-fondo" *ngIf="modalVisible" (click)="cerrarModal()">
+  <div class="modal-contenido" (click)="$event.stopPropagation()">
+    <img [src]="promoSeleccionado?.imagen" alt="Imagen ampliada">
+    <h2>{{ promoSeleccionado?.titulo }}</h2>
+    <p>{{ promoSeleccionado?.descripcion }}</p>
+  </div>
+</div>

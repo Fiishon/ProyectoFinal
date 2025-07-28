@@ -1,0 +1,38 @@
+<div id="inicio">
+  <app-barra1 (promocionesClicked)="mostrarPromociones()" 
+                    (principalClicked)="mostrarpaginaprincipal()" >
+  </app-barra1>
+</div>
+<app-clogin-modal></app-clogin-modal>
+<app-cregistro-modal></app-cregistro-modal>
+
+<ng-container *ngIf="!mostrarSoloPromociones || paginaprincipal">
+    <app-carrusel></app-carrusel>
+    <div class="espacio-degradado"></div>
+    <div id="galeria">
+      <app-cgaleria></app-cgaleria>
+    </div>
+    <div class="espacio-degradado"></div> 
+    <div id="nosotros">
+      <app-cnosotros></app-cnosotros>
+    </div>
+</ng-container>
+
+
+
+<ng-container *ngIf="mostrarSoloPromociones">
+    <app-cpromociones></app-cpromociones>
+</ng-container>
+
+
+
+
+
+
+
+
+
+<div class="espacio-degradado"></div>
+<div id="contactanos">
+  <app-ccontacto></app-ccontacto>
+</div>

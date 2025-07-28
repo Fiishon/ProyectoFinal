@@ -1,0 +1,19 @@
+ h1 {
+   font-size: 40px;
+   color: #006ac8;
+   margin-bottom: 14px;
+   text-align: center;
+   font-weight: bold;
+   letter-spacing: 2px;
+ }
+p {
+  font-size: 1.2em;
+  color: #000000;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+:host {
+  background: linear-gradient(135deg, #69bce5 0%, #f99595 100%);
+  display: block;
+}

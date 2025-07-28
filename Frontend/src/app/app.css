@@ -1,0 +1,5 @@
+.espacio-degradado {
+  height: 40px;
+  background: linear-gradient(90deg, #d8f1fd 0%, #fcefef 100%);
+  border: none;
+}

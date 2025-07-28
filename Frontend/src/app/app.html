@@ -1,0 +1,52 @@
+<div id="inicio">
+  <ng-container *ngIf="!usuarioAutenticado">
+    <app-barra-titulo 
+      (promocionesClicked)="mostrarPromociones()" 
+      (principalClicked)="mostrarpaginaprincipal()">
+    </app-barra-titulo>
+  </ng-container>
+
+  <ng-container *ngIf="usuarioAutenticado">
+    <app-barra1 
+      (promocionesClicked)="mostrarPromociones()" 
+      (principalClicked)="mostrarpaginaprincipal()"
+      (cerrarSesionClicked)="cerrarSesion()"
+      >
+    </app-barra1>
+  </ng-container>
+</div>
+
+
+<app-clogin-modal (loginSuccess)="onLoginSuccess($event)"></app-clogin-modal>
+<app-cregistro-modal></app-cregistro-modal>
+
+<ng-container *ngIf="!mostrarSoloPromociones || paginaprincipal">
+    <app-carrusel></app-carrusel>
+    <div class="espacio-degradado"></div>
+    <div id="galeria">
+      <app-cgaleria></app-cgaleria>
+    </div>
+    <div class="espacio-degradado"></div> 
+    <div id="nosotros">
+      <app-cnosotros></app-cnosotros>
+    </div>
+</ng-container>
+
+
+
+<ng-container *ngIf="mostrarSoloPromociones">
+    <app-cpromociones></app-cpromociones>
+</ng-container>
+
+
+
+
+
+
+
+
+
+<div class="espacio-degradado"></div>
+<div id="contactanos">
+  <app-ccontacto></app-ccontacto>
+</div>
