@@ -1,0 +1,25 @@
+<div class="modal" *ngIf="visible">
+  <div class="modal-contenido">
+    <h3>{{ modo === 'crear' ? 'Añadir Usuario' : 'Editar Usuario' }}</h3>
+
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="usuario.nombre" />
+
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="usuario.email" />
+
+    <label>Rol:</label>
+    <select [(ngModel)]="usuario.rol">
+      <option value="usuario">Usuario</option>
+      <option value="admin">Administrador</option>
+    </select>
+
+    <label *ngIf="modo === 'crear'">Contraseña:</label>
+    <input *ngIf="modo === 'crear'" type="password" [(ngModel)]="usuario.password" />
+
+    <div class="botones">
+      <button (click)="submit()">{{ modo === 'crear' ? 'Guardar' : 'Actualizar' }}</button>
+      <button (click)="cerrar()">Cancelar</button>
+    </div>
+  </div>
+</div>

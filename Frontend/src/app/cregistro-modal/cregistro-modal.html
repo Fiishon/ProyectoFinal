@@ -25,18 +25,23 @@
         <!-- Panel derecho -->
         <div class="modal-right-panel">
           <h5 class="modal-title login-section-title">Crea tu cuenta</h5>
-          <form>
+          <div *ngIf="successMessage" class="alert alert-success" role="alert">
+            {{ successMessage }}
+          </div>
+          <form (ngSubmit)="registrarUsuario()" #registroForm="ngForm">
             <div class="mb-4">
               <label class="form-label ad-label">Nombre(s)*</label>
-              <input type="text" class="form-control ad-input" placeholder="Escribe tu nombre" required>
+              <input type="text" class="form-control ad-input" placeholder="Escribe tu nombre" [(ngModel)]="nombre" name="nombre" required>
             </div>
+
             <div class="mb-3">
               <label class="form-label ad-label">Apellido(s)*</label>
-              <input type="text" class="form-control ad-input" placeholder="Escribe tu apellido" required>
+              <input type="text" class="form-control ad-input" placeholder="Escribe tu apellido" [(ngModel)]="apellido" name="apellido" required>
             </div>
+
             <div class="mb-3">
               <label class="form-label ad-label">Correo electrónico*</label>
-              <input type="email" class="form-control ad-input" placeholder="ejemplo@correo.com" required>
+              <input type="email" class="form-control ad-input" placeholder="ejemplo@correo.com" [(ngModel)]="email" name="email" required>
             </div>
             <div class="mb-3">
               <label class="form-label ad-label">Contraseña*</label>

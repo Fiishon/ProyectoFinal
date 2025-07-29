@@ -12,25 +12,28 @@ import { CContacto } from './ccontacto/ccontacto';
 import { CLoginModal } from "./clogin-modal/clogin-modal";
 import { CRegistroModal } from './cregistro-modal/cregistro-modal';
 import { CPromociones } from "./cpromociones/cpromociones";
+import { BarraAdmin } from "./barra-admin/barra-admin";
+import { AdminUsuarios } from "./admin-usuarios/admin-usuarios";
 
 @Component({
   standalone: true,
   selector: 'app-root',
   imports: [RouterOutlet, CommonModule,
     BarraTitulo, Carrusel, CNosotros, CGaleria, CContacto,
-    CLoginModal, CRegistroModal, CPromociones, Barra1],
+    CLoginModal, CRegistroModal, CPromociones, Barra1, BarraAdmin, AdminUsuarios],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App implements OnInit {
   protected title = 'FronEnd-AMC';
-  // Variables para controlar la visibilidad de las secciones 
   @Output() closeModalEvent = new EventEmitter<void>();
   mostrarSoloPromociones: boolean = false;
   paginaprincipal: boolean = true;
   mostrarLogin: boolean = false;
   usuarioAutenticado: boolean = false;
   usuario: any = null;
+  mostrarusuarios: boolean = false;
+  mostrarviajes: boolean = false;
 
   ngOnInit(): void {
   const storedUser = localStorage.getItem('user');
@@ -59,6 +62,19 @@ export class App implements OnInit {
   mostrarpaginaprincipal() {
     this.mostrarSoloPromociones = false;
     this.paginaprincipal = true;
+    this.mostrarusuarios = false;
+  }
+
+  mostrarUsuariosClicked() {
+  this.mostrarusuarios = true;
+  this.paginaprincipal = false;
+  this.mostrarSoloPromociones = false;
+  console.log('Estado:', this.mostrarusuarios, this.paginaprincipal);
+  }
+
+  mostrarViajes() {
+    this.mostrarviajes = true;
+    this.paginaprincipal = false;
   }
 
   onLoginSuccess(response: any): void {

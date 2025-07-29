@@ -16,6 +16,7 @@ export class CLoginModal {
   showPassword: boolean = false;
   errorMessage: string | null = null;
   isLoading: boolean = false;
+  successMessage: string | null = null;
 
   @Output() closeModalEvent = new EventEmitter<void>();
   @Output() loginSuccess = new EventEmitter<any>();
@@ -63,6 +64,7 @@ export class CLoginModal {
   next: (response) => {
     this.isLoading = false;
     console.log('Login exitoso:', response);
+    this.successMessage = 'Login exitoso';
     localStorage.setItem('token', response.access_token);
 
     // Ahora obtenemos los datos del usuario
@@ -73,13 +75,16 @@ export class CLoginModal {
 
     this.http.get<any>('http://localhost:8000/api/me', { headers: authHeaders }).subscribe({
       next: (userResponse) => {
+        
         console.log('Datos del usuario:', userResponse);
 
         const user = userResponse.usuario;
 
         localStorage.setItem('user', JSON.stringify(user));
         this.loginSuccess.emit({ user });
+        
         this.closeModal();
+
       },
       error: (error) => {
         console.error('Error al obtener el usuario:', error);

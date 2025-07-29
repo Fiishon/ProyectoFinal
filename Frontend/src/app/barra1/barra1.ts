@@ -25,8 +25,5 @@ export class Barra1{
   cerrarSesion() {
     this.cerrarSesionClicked.emit();
   }
-
-
-
 }
 

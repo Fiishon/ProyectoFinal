@@ -1,0 +1,88 @@
+.contenedor {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.contenedor h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+input[type="text"] {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  margin-left: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #125ea6;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead {
+  background-color: #1976d2;
+  color: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+tbody tr:hover {
+  background-color: #e0f0ff;
+}
+
+td button {
+  margin-right: 5px;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+td button:nth-child(1) {
+  background-color: #ffa726; /* Editar: naranja */
+}
+
+td button:nth-child(1):hover {
+  background-color: #fb8c00;
+}
+
+td button:nth-child(2) {
+  background-color: #e53935; /* Eliminar: rojo */
+}
+
+td button:nth-child(2):hover {
+  background-color: #c62828;
+}

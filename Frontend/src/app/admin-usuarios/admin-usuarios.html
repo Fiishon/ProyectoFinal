@@ -1,0 +1,32 @@
+<div class="contenedor">
+  <h2>Gestión de Usuarios</h2>
+
+  <input type="text" [(ngModel)]="filtro" placeholder="Buscar por nombre" />
+
+  <button (click)="cargarUsuarios()">Recargar</button>
+  <button (click)="abrirModalNuevo()">Añadir Usuario</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of filtrarUsuarios()">
+        <td>{{ usuario.id }}</td>
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.rol }}</td>
+        <td>
+          <button (click)="abrirModalEditar(usuario)">Editar</button>
+          <button (click)="eliminarUsuario(usuario.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

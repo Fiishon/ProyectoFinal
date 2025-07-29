@@ -7,13 +7,26 @@
   </ng-container>
 
   <ng-container *ngIf="usuarioAutenticado">
-    <app-barra1 
-      [usuario]="usuario"
-      (promocionesClicked)="mostrarPromociones()" 
-      (principalClicked)="mostrarpaginaprincipal()"
-      (cerrarSesionClicked)="cerrarSesion()" 
-      >
-    </app-barra1>
+
+    <ng-container *ngIf="usuario?.rol === 'usuario'">
+      <app-barra1 
+        [usuario]="usuario"
+        (promocionesClicked)="mostrarPromociones()" 
+        (principalClicked)="mostrarpaginaprincipal()"
+        (cerrarSesionClicked)="cerrarSesion()">
+      </app-barra1>
+    </ng-container>
+
+    <ng-container *ngIf="usuario?.rol === 'admin'">
+      <app-barra-admin 
+        [usuario]="usuario"
+        (principalClicked)="mostrarpaginaprincipal()"
+        (mostrarusuariosClicked)="mostrarUsuariosClicked()"
+        (mostrarViajesClicked)="mostrarViajes()"
+        (cerrarSesionClicked)="cerrarSesion()">
+      </app-barra-admin>
+    </ng-container>
+
   </ng-container>
 </div>
 
@@ -21,7 +34,7 @@
 <app-clogin-modal (loginSuccess)="onLoginSuccess($event)"></app-clogin-modal>
 <app-cregistro-modal></app-cregistro-modal>
 
-<ng-container *ngIf="!mostrarSoloPromociones || paginaprincipal">
+<ng-container *ngIf="!mostrarSoloPromociones && paginaprincipal && !mostrarusuarios">
     <app-carrusel></app-carrusel>
     <div class="espacio-degradado"></div>
     <div id="galeria">
@@ -39,6 +52,9 @@
     <app-cpromociones></app-cpromociones>
 </ng-container>
 
+<ng-container *ngIf="mostrarusuarios">
+  <app-admin-usuarios></app-admin-usuarios>
+</ng-container>
 
 
 
@@ -51,3 +67,7 @@
 <div id="contactanos">
   <app-ccontacto></app-ccontacto>
 </div>
+
+
+
+<router-outlet></router-outlet>
