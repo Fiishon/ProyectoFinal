@@ -23,7 +23,7 @@ class AutobusFactory extends Factory
         return [
             'placa' => $this->faker->unique()->bothify('??-####'), // Placa del autobús
             'modelo' => $this->faker->randomElement(['Volvo', 'Mercedes-Benz', 'Scania', 'MAN']),
-            'capacidad' => $this->faker->numberBetween(20, 50), // Capacidad de pasajeros entre 20 y 50
+            'capacidad' => 30, 
         ];
     }
 }

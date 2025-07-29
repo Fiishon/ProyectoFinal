@@ -193,3 +193,22 @@
     width: 95%;
   }
 }
+
+/* Agrega estos estilos para mejorar las validaciones */
+.text-danger small {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.85rem;
+}
+
+.ad-input.ng-invalid.ng-touched {
+  border-color: #dc3545;
+}
+
+.ad-input.ng-valid.ng-touched {
+  border-color: #28a745;
+}
+
+.spinner-border {
+  margin-right: 8px;
+}

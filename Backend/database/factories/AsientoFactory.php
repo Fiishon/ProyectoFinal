@@ -11,19 +11,24 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class AsientoFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-
     protected $model = Asiento::class;
+    
+    private static $currentBus = 1;
+    private static $currentSeat = 1;
+
     public function definition(): array
-    {
-        return [
-            'numero' => $this->faker->numberBetween(1, 50), // Número del asiento entre 1 y 50
-            'disponible' => $this->faker->boolean(80), // 80% de probabilidad de que el asiento esté disponible
-            'autobus_id' => Autobus::factory(), // Relación con la tabla autobus
-        ];
-    }
+{
+    $autobusId = min(50, ceil(self::$currentSeat / 30));
+    $numeroAsiento = (self::$currentSeat - 1) % 30 + 1;
+
+    $data = [
+        'numero' => $numeroAsiento,
+        'disponible' => $this->faker->boolean(80),
+        'autobus_id' => $autobusId,
+    ];
+
+    self::$currentSeat++;
+    
+    return $data;
+}
 }

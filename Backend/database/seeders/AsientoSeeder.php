@@ -14,6 +14,6 @@ class AsientoSeeder extends Seeder
      */
     public function run(): void
     {
-        Asiento::factory(50)->create();
+        Asiento::factory(1500)->create();
     }
 }

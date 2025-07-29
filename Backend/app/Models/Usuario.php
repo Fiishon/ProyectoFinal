@@ -38,19 +38,9 @@ class Usuario extends Authenticatable
         return 'password';
     }
 
-    // Mutador para el campo email (opcional)
-    protected function email(): Attribute
+    // Cambiar el nombre del campo para el correo electrónico
+    public function getAuthEmailName(): string
     {
-        return Attribute::make(
-            set: fn (string $value) => strtolower($value),
-        );
-    }
-
-    // Mutador para el campo password (hashing automático)
-    protected function password(): Attribute
-    {
-        return Attribute::make(
-            set: fn (string $value) => bcrypt($value),
-        );
+        return 'email';
     }
 }

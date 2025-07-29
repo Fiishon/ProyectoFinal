@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-barra1',
@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './barra1.html',
   styleUrl: './barra1.css'
 })
-export class Barra1 {
+export class Barra1{
 
    @Output() promocionesClicked = new EventEmitter<void>();
   @Output() principalClicked = new EventEmitter<void>();
@@ -19,20 +19,6 @@ export class Barra1 {
 
   @Input() usuario: any = null;
 
-ngOnInit() {
-  const userString = localStorage.getItem('user');
-
-  if (userString) {
-    try {
-      this.usuario = JSON.parse(userString);
-      console.log('Usuario cargado en barra1:', this.usuario);
-    } catch (e) {
-      console.error('Error al parsear usuario:', e);
-    }
-  } else {
-    console.warn('No hay usuario guardado en localStorage');
-  }
-}
 
 @Output() cerrarSesionClicked = new EventEmitter<void>();
 

@@ -13,7 +13,7 @@ class BoletoSeeder extends Seeder
      */
     public function run(): void
     {
-        Boleto::factory(50)->create(); // Crear 50 boletos con datos ficticios
+        Boleto::factory(300)->create(); // Crear 50 boletos con datos ficticios
         // Puedes ajustar el número de boletos según tus necesidades
     }
 }

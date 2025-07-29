@@ -30,19 +30,26 @@ export class App implements OnInit {
   paginaprincipal: boolean = true;
   mostrarLogin: boolean = false;
   usuarioAutenticado: boolean = false;
+  usuario: any = null;
+
+  ngOnInit(): void {
+  const storedUser = localStorage.getItem('user');
+  if (storedUser) {
+    this.usuario = JSON.parse(storedUser);
+    this.usuarioAutenticado = true;
+  }
+}
 
   closeModal(): void {
     this.closeModalEvent.emit();
   }
 
-   cerrarLogin() {
-    this.mostrarLogin = false;
+  abrirLogin() {
+    this.mostrarLogin = true;
   }
 
-  mostrarLoginn() {
-    this.mostrarLogin = true;
-    this.mostrarSoloPromociones = false;
-    this.paginaprincipal = true;
+   cerrarLogin() {
+    this.mostrarLogin = false;
   }
   
   mostrarPromociones() {
@@ -54,21 +61,10 @@ export class App implements OnInit {
     this.paginaprincipal = true;
   }
 
-  onLoginSuccess(usuario: any) {
+  onLoginSuccess(response: any): void {
+  this.usuario = response.user;
   this.usuarioAutenticado = true;
-  this.paginaprincipal = true;
-  this.mostrarSoloPromociones = false;
-  this.cerrarLogin();
-}
-
-ngOnInit(): void {
-  const user = localStorage.getItem('user');
-  const token = localStorage.getItem('token');
-
-  if (user && token) {
-    this.usuarioAutenticado = true;
-    // Puedes usar JSON.parse(user) si necesitas los datos
-  }
+  this.mostrarLogin = false;
 }
 
 cerrarSesion(): void {

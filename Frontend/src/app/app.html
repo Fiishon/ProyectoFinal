@@ -8,9 +8,10 @@
 
   <ng-container *ngIf="usuarioAutenticado">
     <app-barra1 
+      [usuario]="usuario"
       (promocionesClicked)="mostrarPromociones()" 
       (principalClicked)="mostrarpaginaprincipal()"
-      (cerrarSesionClicked)="cerrarSesion()"
+      (cerrarSesionClicked)="cerrarSesion()" 
       >
     </app-barra1>
   </ng-container>

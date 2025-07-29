@@ -29,8 +29,8 @@ class UsuarioFactory extends Factory
         return [
             'nombre' => fake()->name,
             'apellido' => fake()->lastName,
-            'correo' => fake()->unique()->safeEmail,
-            'contraseña' => Hash::make('contrasena'), // Contraseña por defecto
+            'email' => fake()->unique()->safeEmail,
+            'password' => Hash::make('contrasena'), // Contraseña por defecto
             'rol' => $rol,
         ];
     }
