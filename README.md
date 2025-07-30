@@ -111,3 +111,12 @@ Podemos filtrar nuestros viajes en esta tabla, se registran todos nuestros viaje
 
 
 
+Backend (Laravel)
+```bash
+cd backend
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
+
