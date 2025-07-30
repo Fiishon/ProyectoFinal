@@ -71,3 +71,43 @@ Principales entidades del sistema:
 cd frontend
 npm install
 ng serve
+
+Ventana principal
+
+
+<img width="2880" height="1920" alt="image" src="https://github.com/user-attachments/assets/c60621ca-eaf1-4571-a7b0-ee873c3552a3" />
+
+
+Galeria del sistema
+
+
+<img width="2880" height="1920" alt="image" src="https://github.com/user-attachments/assets/fa6716d5-fcb0-449e-b1b6-761e815e8a5d" />
+
+
+Promociones en la venta de boletos
+
+<img width="2880" height="1920" alt="image" src="https://github.com/user-attachments/assets/5d6721d4-6da5-4ee7-ab06-8b6943880f92" />
+
+
+
+Login al sistema.
+
+
+<img width="2880" height="1920" alt="image" src="https://github.com/user-attachments/assets/733407ba-938b-4f5e-8c43-0e681914950e" />
+
+
+
+Registro en el sistema
+
+
+<img width="2880" height="1920" alt="image" src="https://github.com/user-attachments/assets/6e3b14d0-6a2d-4862-9c06-409260730657" />
+
+
+
+Sección de "Mis Viajes" con un usuario normal.
+Podemos filtrar nuestros viajes en esta tabla, se registran todos nuestros viajes realizados y proximos a realizar
+
+<img width="2880" height="1920" alt="image" src="https://github.com/user-attachments/assets/3c2b349c-d6d7-4385-9ba8-a26dddbdb2ef" />
+
+
+
