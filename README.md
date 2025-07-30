@@ -67,7 +67,7 @@ Principales entidades del sistema:
 
 ### Frontend (Angular)
 
-```bash
+bash
 cd frontend
 npm install
 ng serve
