@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
@@ -20,6 +20,7 @@ export class CLoginModal {
 
   @Output() closeModalEvent = new EventEmitter<void>();
   @Output() loginSuccess = new EventEmitter<any>();
+  @Input() modalVisible: boolean = false;
 
   http = inject(HttpClient);
   constructor(private router: Router) { }
@@ -29,7 +30,7 @@ export class CLoginModal {
   }
 
   closeModal(): void {
-    this.closeModalEvent.emit();
+    this.modalVisible = false;
   }
 
   login(): void {

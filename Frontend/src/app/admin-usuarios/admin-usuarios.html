@@ -3,7 +3,6 @@
 
   <input type="text" [(ngModel)]="filtro" placeholder="Buscar por nombre" />
 
-  <button (click)="cargarUsuarios()">Recargar</button>
   <button (click)="abrirModalNuevo()">Añadir Usuario</button>
 
   <table>
@@ -30,3 +29,11 @@
     </tbody>
   </table>
 </div>
+
+<app-usuario-modal
+  [visible]="modalVisible"
+  [modo]="modoEdicion"
+  [usuario]="usuarioActual"
+  (guardar)="guardarUsuario($event)"
+  (cancelar)="cerrarModal()"
+></app-usuario-modal>

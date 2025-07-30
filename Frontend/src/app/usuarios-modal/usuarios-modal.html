@@ -5,13 +5,16 @@
     <label>Nombre:</label>
     <input type="text" [(ngModel)]="usuario.nombre" />
 
+    <label>Apellido:</label>
+    <input type="text" [(ngModel)]="usuario.apellido" />
+
     <label>Email:</label>
     <input type="email" [(ngModel)]="usuario.email" />
 
     <label>Rol:</label>
     <select [(ngModel)]="usuario.rol">
-      <option value="usuario">Usuario</option>
-      <option value="admin">Administrador</option>
+      <option value="usuario">usuario</option>
+      <option value="admin">admin</option>
     </select>
 
     <label *ngIf="modo === 'crear'">Contraseña:</label>

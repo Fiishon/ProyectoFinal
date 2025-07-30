@@ -43,6 +43,7 @@ export class CRegistroModal {
       apellido: this.apellido,
       email: this.email,
       password: this.password,
+      rol: 'usuario', 
     };
 
     const headers = new HttpHeaders({

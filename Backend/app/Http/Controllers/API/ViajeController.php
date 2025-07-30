@@ -4,6 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Viaje;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ViajeController extends Controller
 {
@@ -12,7 +15,9 @@ class ViajeController extends Controller
      */
     public function index()
     {
-        //
+        // This method should return a list of viajes
+        // For now, we will return an empty response
+        return response()->json(Viaje::all());
     }
 
     /**
@@ -20,7 +25,8 @@ class ViajeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuario = Viaje::create($request->all());
+        return response()->json($usuario, 201);
     }
 
     /**
@@ -28,7 +34,9 @@ class ViajeController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // This method should return a specific viaje by ID
+        // For now, we will return an empty response
+        return response()->json(Viaje::findOrFail($id));
     }
 
     /**
@@ -36,7 +44,9 @@ class ViajeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $viaje = Viaje::findOrFail($id);
+        $viaje->update($request->all());
+        return response()->json($viaje);
     }
 
     /**
@@ -44,6 +54,8 @@ class ViajeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $viaje = Viaje::findOrFail($id);
+        $viaje->delete();
+        return response()->json(['message' => 'Viaje eliminado'], 200);
     }
 }

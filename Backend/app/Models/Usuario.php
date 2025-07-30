@@ -31,16 +31,4 @@ class Usuario extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    // Cambiar el nombre del campo para la autenticación
-    public function getAuthPasswordName(): string
-    {
-        return 'password';
-    }
-
-    // Cambiar el nombre del campo para el correo electrónico
-    public function getAuthEmailName(): string
-    {
-        return 'email';
-    }
 }

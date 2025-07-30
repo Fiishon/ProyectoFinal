@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -27,6 +27,7 @@ import { AdminUsuarios } from "./admin-usuarios/admin-usuarios";
 export class App implements OnInit {
   protected title = 'FronEnd-AMC';
   @Output() closeModalEvent = new EventEmitter<void>();
+  @Input() modalVisible: boolean = false;
   mostrarSoloPromociones: boolean = false;
   paginaprincipal: boolean = true;
   mostrarLogin: boolean = false;
@@ -44,7 +45,7 @@ export class App implements OnInit {
 }
 
   closeModal(): void {
-    this.closeModalEvent.emit();
+    this.modalVisible = false;
   }
 
   abrirLogin() {

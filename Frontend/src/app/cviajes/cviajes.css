@@ -1,0 +1,75 @@
+.contenedor-principal {
+  display: flex;
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.imagen-lateral {
+  width: 30%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.imagen-lateral img {
+  max-width: 100%;
+  height: auto;
+}
+
+.contenido-central {
+  width: 70%;
+  padding: 3rem;
+}
+
+.contenido-central h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contenido-central .acciones {
+  margin: 1.5rem 0;
+}
+
+.acciones button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  background-color: #fff;
+  border: 1px solid #9747ff;
+  color: #9747ff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.acciones input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.btn-boleto {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-boleto:hover {
+  background-color: #45a049;
+}
