@@ -10,9 +10,7 @@ Este proyecto es un sistema integrado para la gestión y venta de boletos de aut
 
 - Venta de boletos en línea
 - Gestión de rutas y horarios
-- Administración de flota de autobuses
 - Control de usuarios (clientes y administradores)
-- Reportes de ventas y ocupación
 
 ---
 
@@ -24,25 +22,20 @@ Este proyecto es un sistema integrado para la gestión y venta de boletos de aut
 - TypeScript
 - HTML5 / CSS3
 - Bootstrap 5
-- RxJS (manejo de estados)
 
 ### Backend
 
 - Laravel 10
 - PHP 8.1+
-- Eloquent ORM
-- API RESTful
+
 
 ### Base de Datos
 
 - MySQL 8.0
 - Diseñado con MySQL Workbench
-- Estructura relacional optimizada para transacciones
 
 ### Otros
 
-- JWT para autenticación
-- Docker (opcional para despliegue)
 - Git para control de versiones
 
 ---
@@ -53,10 +46,8 @@ Principales entidades del sistema:
 
 - `usuarios`: clientes, administradores, operadores
 - `autobuses`: datos de la flota vehicular
-- `rutas`: origen, destino, paradas intermedias
 - `viajes`: fechas, horarios, autobús asignado
 - `boletos`: información de ventas y asientos
-- `pagos`: registro de transacciones
 
 ---
 
