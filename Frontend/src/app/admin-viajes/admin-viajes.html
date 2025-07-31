@@ -1,0 +1,41 @@
+<div class="contenedor">
+  <h2>Gestión de Viajes</h2>
+
+  <input type="text" [(ngModel)]="filtro" placeholder="Buscar por origen o destino" />
+
+  <button (click)="abrirModalNuevo()">Añadir Viaje</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Origen</th>
+        <th>Destino</th>
+        <th>Fecha</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let viaje of filtrarViajes()">
+        <td>{{ viaje.id }}</td>
+        <td>{{ viaje.origen }}</td>
+        <td>{{ viaje.destino }}</td>
+        <td>{{ viaje.fecha }}</td>
+        <td>{{ viaje.precio }}</td>
+        <td>
+          <button (click)="abrirModalEditar(viaje)">Editar</button>
+          <button (click)="eliminarViaje(viaje.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-viaje-modal
+  [visible]="modalVisible"
+  [modo]="modoEdicion"
+  [viaje]="viajeActual"
+  (guardar)="guardarViaje($event)"
+  (cancelar)="cerrarModal()"
+></app-viaje-modal>

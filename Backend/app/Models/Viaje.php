@@ -17,4 +17,8 @@ class Viaje extends Model
         'fecha',
         'costo',
     ];
+
+    public function autobus() {
+    return $this->belongsTo(Autobus::class, 'id_autobus');
+}
 }

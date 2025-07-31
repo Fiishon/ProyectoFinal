@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-barra-titulo',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './barra-titulo.html',
   styleUrl: './barra-titulo.css'
 })

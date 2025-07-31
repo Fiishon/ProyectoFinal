@@ -1,0 +1,27 @@
+<h2>Comprar Boleto</h2>
+
+<div *ngIf="!viajeSeleccionado">
+  <h3>Selecciona un viaje:</h3>
+  <ul>
+    <li *ngFor="let viaje of viajes">
+      {{ viaje.origen }} → {{ viaje.destino }} ({{ viaje.fecha }})
+      <button (click)="seleccionarViaje(viaje)">Seleccionar</button>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="viajeSeleccionado">
+  <h3>Viaje seleccionado: {{ viajeSeleccionado.origen }} → {{ viajeSeleccionado.destino }} ({{ viajeSeleccionado.fecha }})</h3>
+
+  <!-- Se elimina el select de asientos -->
+
+  <button (click)="comprarBoleto()">Confirmar compra</button>
+  <button (click)="viajeSeleccionado = null">Cancelar</button>
+</div>
+
+<div *ngIf="boletoComprado" style="margin-top: 20px;">
+  <h3>Boleto comprado</h3>
+  <p><b>Viaje:</b> {{ boletoComprado.origen }} → {{ boletoComprado.destino }}</p>
+  <p><b>Horario:</b> {{ boletoComprado.fecha_hora }}</p>
+  <p><b>Asiento asignado:</b> {{ boletoComprado.asiento_numero }}</p>
+</div>

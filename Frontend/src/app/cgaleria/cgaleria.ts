@@ -2,11 +2,12 @@
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cgaleria',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './cgaleria.html',
   styleUrls: ['./cgaleria.css']
 })

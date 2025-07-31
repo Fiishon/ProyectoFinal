@@ -84,12 +84,7 @@ usuarioActual: any = {};
 
 abrirModalEditar(usuario: any) {
   this.modoEdicion = 'editar';
-  this.usuarioActual = { 
-    nombre: '',
-    apellido: '',
-    email: '',
-    rol: 'usuario',
-    password: ''}; 
+  this.usuarioActual = { ...usuario }; // Clonamos el usuario para evitar mutaciones
   this.modalVisible = true;
 }
 

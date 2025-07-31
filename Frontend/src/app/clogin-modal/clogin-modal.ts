@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, output, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
@@ -21,6 +21,7 @@ export class CLoginModal {
   @Output() closeModalEvent = new EventEmitter<void>();
   @Output() loginSuccess = new EventEmitter<any>();
   @Input() modalVisible: boolean = false;
+  @Output() closeModal = new EventEmitter<void>();
 
   http = inject(HttpClient);
   constructor(private router: Router) { }
@@ -29,9 +30,7 @@ export class CLoginModal {
     this.showPassword = !this.showPassword;
   }
 
-  closeModal(): void {
-    this.modalVisible = false;
-  }
+  
 
   login(): void {
     // Resetear mensajes de error
@@ -84,7 +83,8 @@ export class CLoginModal {
         localStorage.setItem('user', JSON.stringify(user));
         this.loginSuccess.emit({ user });
         
-        this.closeModal();
+        this.closeModalEvent.emit();
+        this.router.navigate(['/']);
 
       },
       error: (error) => {

@@ -4,46 +4,32 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Boleto;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BoletoComprado;
 
 class BoletoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function comprar(Request $request)
     {
-        //
-    }
+        $validated = $request->validate([
+            'id_usuario' => 'required|exists:users,id',
+            'id_viaje' => 'required|exists:viajes,id',
+        ]);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        // Guardar boleto
+        $boleto = Boleto::create([
+            'id_usuario' => $validated['id_usuario'],
+            'id_viaje' => $validated['id_viaje'],
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        // Obtener usuario
+        $user = User::find($validated['id_usuario']);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        // Enviar correo
+        Mail::to($user->email)->send(new BoletoComprado($boleto));
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return response()->json(['message' => 'Boleto comprado y enviado por correo.']);
     }
 }

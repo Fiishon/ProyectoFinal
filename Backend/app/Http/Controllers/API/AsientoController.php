@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Asiento;
 
 class AsientoController extends Controller
 {
@@ -28,7 +30,7 @@ class AsientoController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return response()->json(Asiento::findOrFail($id));
     }
 
     /**
@@ -46,4 +48,14 @@ class AsientoController extends Controller
     {
         //
     }
+
+    public function getAsientosDisponibles() {
+    $asientos = DB::table('asientos')
+        ->where('disponible', 1)
+        ->get();
+
+    return response()->json($asientos);
+}
+
+
 }

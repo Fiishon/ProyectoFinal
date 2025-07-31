@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Models\Usuario;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -24,7 +26,6 @@ class UsuarioController extends Controller
         $usuario = Usuario::create($request->all());
         return response()->json($usuario, 201);
     }
-
     /**
      * Display the specified resource.
      */

@@ -8,6 +8,8 @@ use App\Models\Viaje;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+
+
 class ViajeController extends Controller
 {
     /**
@@ -17,7 +19,9 @@ class ViajeController extends Controller
     {
         // This method should return a list of viajes
         // For now, we will return an empty response
+        //return Viaje::all();
         return response()->json(Viaje::all());
+        
     }
 
     /**
@@ -57,5 +61,9 @@ class ViajeController extends Controller
         $viaje = Viaje::findOrFail($id);
         $viaje->delete();
         return response()->json(['message' => 'Viaje eliminado'], 200);
+
+        //Viaje::destroy($id);
+        //return response()->json(['message' => 'Viaje eliminado']);
+    
     }
 }

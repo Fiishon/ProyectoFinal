@@ -1,1 +1,42 @@
-<p>cviajes works!</p>
+<div class="contenedor-principal">
+  <!-- Imagen fija a la izquierda -->
+  <div class="imagen-lateral">
+    <img src="Mexico.avif" alt="Viajes" />
+  </div>
+
+  <!-- Contenido central -->
+  <div class="contenido-central">
+    <h1>Mis viajes</h1>
+    <p>Consulta el historial de tus viajes.</p>
+
+    <div class="acciones">
+      <button (click)="filtrar('proximos')">Próximos</button>
+      <button (click)="filtrar('anteriores')">Anteriores</button>
+      <input type="text" placeholder="Buscar..." [(ngModel)]="filtro" (input)="aplicarFiltro()" />
+      
+    </div>
+
+    <!-- Tabla de viajes -->
+    <table>
+      <thead>
+        <tr>
+          <th>Origen</th>
+          <th>Destino</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Costo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let viaje of viajesFiltrados">
+          <td>{{ viaje.origen }}</td>
+          <td>{{ viaje.destino }}</td>
+          <td>{{ viaje.fecha | date:'shortDate' }}</td>
+          <td>{{ viaje.hora }}</td>
+          <td>{{ viaje.costo | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+</div>

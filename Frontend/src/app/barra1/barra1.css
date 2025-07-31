@@ -1,31 +1,45 @@
-.btn-login {
-  background-color: #07cce6;
-  border-radius: 1px;
-  font-weight:600;
-  height: 70px;
+.relative {
+  position: relative;
 }
-/*.btn-login {
-  background-color: #07cce6;
-  border-radius: 1px;
-  font-weight: 600;
-  height: 35px;  /*Igual altura que la navbar
-  display: flex;
-  align-items: center;
-  padding-top: 0;
-  padding-bottom: 0;
-}*/
-.navbar-brand img {
-  height: 30px;
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
 }
-.logo-amc {
-  font-family: 'Arial Black', sans-serif;
-  font-size: 40px;
-  font-weight: bold;
-  letter-spacing: 6px;
-  margin-left: 21px;
-  background: linear-gradient(90deg, #025fb7 0%, #2fd2e8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+
+.navbar {
+  overflow: visible !important;
+}
+
+.nav-link.cursor-pointer {
+  cursor: pointer;
+  color: #0d6efd; /* color azul típico de links */
+  text-decoration: underline;
+}
+
+.nav-link.cursor-pointer:hover {
+  color: #0a58ca; /* color más oscuro al pasar mouse */
+  text-decoration: none;
+}
+
+
+.submenu-item {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.submenu-item:hover {
+  background-color: #f0f0f0;
 }
