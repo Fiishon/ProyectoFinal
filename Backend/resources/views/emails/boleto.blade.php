@@ -1,14 +1,18 @@
 @component('mail::message')
-# ¡Gracias por tu compra, {{ $boleto->usuario->name }}!
+# Compra Exitosa
 
-Tu boleto fue generado con éxito.
+Hola,
 
-- **Destino:** {{ $boleto->viaje->destino }}
-- **Fecha del viaje:** {{ $boleto->viaje->fecha }}
-- **Asiento:** {{ $boleto->asiento->numero }}
-- **Precio:** ${{ $boleto->precio }}
-- **Estado:** {{ $boleto->estado_texto }}
+Tu boleto ha sido comprado con éxito. Aquí están los detalles:
 
-Tu boleto en PDF está adjunto.
+- Número de boleto: {{ $boleto->id }}
+- Viaje: {{ $boleto->id_viaje }}
+- Asiento asignado: {{ $boleto->id_asiento }}
+- Precio: ${{ number_format($boleto->precio, 2) }}
+- Fecha de compra: {{ $boleto->fecha_compra }}
 
+Gracias por confiar en nosotros.
+
+Saludos,<br>
+{{ config('app.name') }}
 @endcomponent

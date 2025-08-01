@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let viaje of filtrarViajes()">
+      <tr *ngFor="let viaje of viajesPaginados">
         <td>{{ viaje.id }}</td>
         <td>{{ viaje.origen }}</td>
         <td>{{ viaje.destino }}</td>
@@ -39,3 +39,11 @@
   (guardar)="guardarViaje($event)"
   (cancelar)="cerrarModal()"
 ></app-viaje-modal>
+
+
+<div class="paginacion">
+  <button (click)="paginaAnterior()" [disabled]="paginaActual === 1">Anterior</button>
+  <span>Página {{ paginaActual }} de {{ totalPaginasCalculadas }}</span>
+  <button (click)="paginaSiguiente()" [disabled]="paginaActual === totalPaginasCalculadas">Siguiente</button>
+</div>
+

@@ -3,7 +3,7 @@
 <div *ngIf="!viajeSeleccionado">
   <h3>Selecciona un viaje:</h3>
   <ul>
-    <li *ngFor="let viaje of viajes">
+    <li *ngFor="let viaje of viajesPaginados">
       {{ viaje.origen }} → {{ viaje.destino }} ({{ viaje.fecha }})
       <button (click)="seleccionarViaje(viaje)">Seleccionar</button>
     </li>
@@ -25,3 +25,10 @@
   <p><b>Horario:</b> {{ boletoComprado.fecha_hora }}</p>
   <p><b>Asiento asignado:</b> {{ boletoComprado.asiento_numero }}</p>
 </div>
+
+<div class="paginacion" style="margin-top: 10px;">
+  <button (click)="paginaAnterior()" [disabled]="paginaActual === 1">Anterior</button>
+  <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
+  <button (click)="paginaSiguiente()" [disabled]="paginaActual === totalPaginas">Siguiente</button>
+</div>
+

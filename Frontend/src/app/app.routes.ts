@@ -9,7 +9,7 @@ import { CGaleria } from './cgaleria/cgaleria';
 import { ComprarBoletosComponent } from './comprar-boleto/comprar-boleto';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/', pathMatch: 'full' },
+
     { path: 'admin-usuarios', component: AdminUsuarios },
     { path: 'promociones', component: CPromociones},
     { path: 'nosotros', component: CNosotros},

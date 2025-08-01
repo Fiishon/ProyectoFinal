@@ -20,11 +20,8 @@ cerrarSubmenu() {
 
   constructor(private router: Router) {}
 
-   @Output() promocionesClicked = new EventEmitter<void>();
-  @Output() principalClicked = new EventEmitter<void>();
-   @Output() viajesClicked = new EventEmitter<void>();
   emitirViajes() {
-    this.viajesClicked.emit();
+    this.router.navigate(['viajes']);
   }
 
   verViajes() {
@@ -35,12 +32,8 @@ irAComprar() {
   this.router.navigate(['comprar-boletos']);
 }
 
-
-  emitirPromociones() {
-    this.promocionesClicked.emit();
-  }
   AMCprincipal() {
-    this.principalClicked.emit();
+    this.router.navigate(['']);
   }
 
   @Input() usuario: any = null;

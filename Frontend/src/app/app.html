@@ -14,7 +14,6 @@
         (viajesClicked)="mostrarViajes()"
         (loginSuccess)="onLoginSuccess($event)"
         (cerrarSesionClicked)="cerrarSesion()">
-
       </app-barra1>
     </ng-container>
 
@@ -33,8 +32,6 @@
   </ng-container>
 </div>
 
-
-
 <router-outlet></router-outlet>
 
 <app-clogin-modal (loginSuccess)="onLoginSuccess($event)"></app-clogin-modal>
@@ -50,7 +47,7 @@
 
 </ng-container>
 
-<ng-container *ngIf="mostrarSoloPromociones">
+<ng-container *ngIf="mostrarSoloPromociones && paginaprincipal">
     <app-cpromociones></app-cpromociones>
 </ng-container>
 
@@ -65,11 +62,11 @@
 <ng-container *ngIf="mostrarGestionarViajes">
   <app-admin-viajes></app-admin-viajes>
 </ng-container>
-
-<div class="espacio-degradado"></div>
+ <div class="espacio-degradado"></div>
 <div id="contactanos">
   <app-ccontacto></app-ccontacto>
 </div>
+
 
 
 

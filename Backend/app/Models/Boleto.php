@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Boleto extends Model
 {
     /** @use HasFactory<\Database\Factories\BoletoFactory> */
@@ -26,13 +27,14 @@ class Boleto extends Model
 }
 
 public function asiento()
-{
-    return $this->belongsTo(Asiento::class, 'id_asiento');
-}
+    {
+        return $this->belongsTo(Asiento::class, 'id_asiento');
+    }
 
-public function viaje()
-{
-    return $this->belongsTo(Viaje::class, 'id_viaje');
-}
+
+    public function viaje()
+    {
+        return $this->belongsTo(Viaje::class, 'id_viaje');
+    }
 
 }

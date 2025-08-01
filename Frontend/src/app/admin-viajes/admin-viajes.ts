@@ -24,6 +24,29 @@ export class AdminViajes {
     precio: ''
   };
 
+  paginaActual: number = 1;
+elementosPorPagina: number = 10;
+totalPaginas: number = 1;
+
+get viajesPaginados() {
+  const inicio = (this.paginaActual - 1) * this.elementosPorPagina;
+  const fin = inicio + this.elementosPorPagina;
+  return this.filtrarViajes().slice(inicio, fin);
+}
+
+get totalPaginasCalculadas() {
+  return Math.ceil(this.filtrarViajes().length / this.elementosPorPagina);
+}
+
+paginaAnterior() {
+  if (this.paginaActual > 1) this.paginaActual--;
+}
+
+paginaSiguiente() {
+  if (this.paginaActual < this.totalPaginasCalculadas) this.paginaActual++;
+}
+
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {

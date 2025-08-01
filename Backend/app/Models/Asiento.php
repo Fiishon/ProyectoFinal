@@ -14,4 +14,9 @@ class Asiento extends Model
     return $this->belongsTo(Autobus::class, 'id_autobus');
 }
 
+public function boletos()
+    {
+        return $this->hasMany(Boleto::class, 'id_asiento');
+    }
+
 }

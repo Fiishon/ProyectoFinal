@@ -28,7 +28,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let viaje of viajesFiltrados">
+        <tr *ngFor="let viaje of viajesFiltradosPaginados">
           <td>{{ viaje.origen }}</td>
           <td>{{ viaje.destino }}</td>
           <td>{{ viaje.fecha | date:'shortDate' }}</td>
@@ -39,4 +39,10 @@
     </table>
     
   </div>
+</div>
+
+<div class="paginacion">
+  <button (click)="paginaAnterior()" [disabled]="paginaActual === 1">Anterior</button>
+  <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
+  <button (click)="paginaSiguiente()" [disabled]="paginaActual === totalPaginas">Siguiente</button>
 </div>

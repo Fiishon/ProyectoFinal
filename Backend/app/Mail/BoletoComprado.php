@@ -5,7 +5,6 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use App\Models\Boleto;
 
 class BoletoComprado extends Mailable
 {
@@ -13,14 +12,14 @@ class BoletoComprado extends Mailable
 
     public $boleto;
 
-    public function __construct(Boleto $boleto)
+    public function __construct($boleto)
     {
         $this->boleto = $boleto;
     }
 
     public function build()
     {
-        return $this->subject('Tu boleto ha sido comprado')
-                    ->markdown('emails.boleto');
+        return $this->subject('Tu boleto ha sido comprado con éxito')
+                    ->markdown('emails.boleto.comprado');
     }
 }

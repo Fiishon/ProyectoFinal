@@ -15,6 +15,27 @@ export class ComprarBoletosComponent implements OnInit {
   viajeSeleccionado: any = null;
   boletoComprado: any = null;
 
+  paginaActual: number = 1;
+elementosPorPagina: number = 10;
+
+get viajesPaginados() {
+  const inicio = (this.paginaActual - 1) * this.elementosPorPagina;
+  const fin = inicio + this.elementosPorPagina;
+  return this.viajes.slice(inicio, fin);
+}
+
+get totalPaginas() {
+  return Math.ceil(this.viajes.length / this.elementosPorPagina);
+}
+
+paginaAnterior() {
+  if (this.paginaActual > 1) this.paginaActual--;
+}
+
+paginaSiguiente() {
+  if (this.paginaActual < this.totalPaginas) this.paginaActual++;
+}
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
